@@ -2,6 +2,7 @@ var balloon,balloonImage1,balloonImage2;
 // create database and position variable here
 var database, position;
 var balloonPos;
+var edges;
 function preload(){
    bg =loadImage("cityImage.png");
    balloonImage1=loadAnimation("hotairballoon1.png");
@@ -56,6 +57,8 @@ function draw() {
     balloon.scale = balloon.scale + 0.01;
   }
 
+  edges = createEdgeSprites();
+  balloon.collide(edges);
   drawSprites();
   fill(0);
   stroke("white");
